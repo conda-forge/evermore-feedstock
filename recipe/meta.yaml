@@ -1,5 +1,5 @@
 {% set name = "evermore" %}
-{% set version = "0.2.7" %}
+{% set version = "0.2.9" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/evermore-{{ version }}.tar.gz
-  sha256: a56b6321f0ed22c1eaeb2679baf2d7b12d0c9c8374486e46b11b97cfd4f6c2c8
+  sha256: 19972378ab9de015ed3ea7c38db93d876b7d80a835d78c9e110c1452f04de592
 
 build:
   noarch: python
