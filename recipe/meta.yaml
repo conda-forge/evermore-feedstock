@@ -25,6 +25,7 @@ requirements:
     - jaxlib
     - jaxtyping
     - equinox >=0.10.6
+    - treescope
 
 test:
   imports:
