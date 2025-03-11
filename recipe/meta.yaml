@@ -1,6 +1,6 @@
-{% set python_min = '3.10' %}
+{% set python_min = "3.10" %}
 {% set name = "evermore" %}
-{% set version = "0.2.9" %}
+{% set version = "0.2.10" %}
 
 package:
   name: {{ name|lower }}
@@ -8,12 +8,12 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/evermore-{{ version }}.tar.gz
-  sha256: 19972378ab9de015ed3ea7c38db93d876b7d80a835d78c9e110c1452f04de592
+  sha256: b2fbb219b30e5cd2ba881977d1c6bca29b1aee57f29481199b23a1c1a1b6f5ca
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 requirements:
   host:
