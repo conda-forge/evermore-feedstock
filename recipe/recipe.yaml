@@ -1,0 +1,60 @@
+schema_version: 1
+
+context:
+  python_min: 3.10
+  name: evermore
+  version: 0.2.10
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/evermore-${{ version }}.tar.gz
+  sha256: b2fbb219b30e5cd2ba881977d1c6bca29b1aee57f29481199b23a1c1a1b6f5ca
+
+build:
+  number: 1
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - hatchling
+    - pip
+  run:
+    - python >=${{ python_min }}
+    - jax
+    - jaxlib
+    - jaxtyping
+    - equinox >=0.10.6
+    - treescope
+
+tests:
+  - python:
+      imports:
+        - evermore
+      pip_check: true
+      python_version: ${{ python_min }}.*
+  - files:
+      source:
+        - tests/
+        - pyproject.toml
+    requirements:
+      run:
+        - pytest
+    script:
+      - pytest
+
+about:
+  summary: Differentiable (binned) likelihoods in JAX.
+  license: BSD-3-Clause
+  license_file: LICENSE
+  homepage: https://github.com/pfackeldey/evermore
+  repository: https://github.com/pfackeldey/evermore
+  documentation: https://evermore.readthedocs.io/en/latest/
+
+extra:
+  recipe-maintainers:
+    - pfackeldey
