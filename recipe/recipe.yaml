@@ -20,7 +20,7 @@ build:
 
 requirements:
   host:
-    - python 3.10.*
+    - python ${{ python_min }}.*
     - hatchling
     - pip
   run:
@@ -36,8 +36,17 @@ tests:
       imports:
         - evermore
       pip_check: true
-
       python_version: ${{ python_min }}.*
+  - files:
+      source:
+        - tests/
+        - pyproject.toml
+    requirements:
+      run:
+        - pytest
+    script:
+      - pytest
+
 about:
   summary: Differentiable (binned) likelihoods in JAX.
   license: BSD-3-Clause
