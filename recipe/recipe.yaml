@@ -25,7 +25,7 @@ requirements:
     - pip
   run:
     - python >=${{ python_min }}
-    - jax
+    - jax >=0.4.25
     - jaxlib
     - jaxtyping
     - equinox >=0.10.6
