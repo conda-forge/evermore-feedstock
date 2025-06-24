@@ -1,9 +1,9 @@
 schema_version: 1
 
 context:
-  python_min: 3.10
+  python_min: '3.10'
   name: evermore
-  version: 0.2.10
+  version: "0.3.1"
 
 package:
   name: ${{ name|lower }}
@@ -11,10 +11,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/evermore-${{ version }}.tar.gz
-  sha256: b2fbb219b30e5cd2ba881977d1c6bca29b1aee57f29481199b23a1c1a1b6f5ca
+  sha256: 5f3793652f3729658521779c14a363d3e2bb3882adf097ed67d87a7b24621f02
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
@@ -25,7 +25,7 @@ requirements:
     - pip
   run:
     - python >=${{ python_min }}
-    - jax
+    - jax >=0.4.25
     - jaxlib
     - jaxtyping
     - equinox >=0.10.6
