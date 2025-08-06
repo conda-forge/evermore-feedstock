@@ -3,7 +3,7 @@ schema_version: 1
 context:
   python_min: '3.10'
   name: evermore
-  version: "0.3.2"
+  version: "0.3.3"
 
 package:
   name: ${{ name|lower }}
@@ -11,7 +11,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/evermore-${{ version }}.tar.gz
-  sha256: ce8d7e30cfbde34eaeac39897743f4f95fbc6b7f5e8778207318b244e2c1ea61
+  sha256: 6a0eb8d960cfc7157d62681047aee819d8a588a5d57edae549e4a72a6a2a3418
 
 build:
   number: 0
