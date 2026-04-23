@@ -3,7 +3,7 @@ schema_version: 1
 context:
   python_min: '3.11'
   name: evermore
-  version: "0.3.5"
+  version: 0.4.0
 
 package:
   name: ${{ name|lower }}
@@ -11,7 +11,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/evermore-${{ version }}.tar.gz
-  sha256: 97f5c4d280c4e6540895766054f433ed813d8979fb0e2f2aeae196c21725044e
+  sha256: 21f0f969f749e07be2051384e74175cb4894bf5f6dcbb7e9f2033109abe210c6
 
 build:
   number: 0
@@ -25,12 +25,10 @@ requirements:
     - pip
   run:
     - python >=${{ python_min }}
-    - jax >=0.7.0
+    - jax >=0.7.2
     - jaxlib
     - jaxtyping
-    - equinox >=0.10.6
-    - treescope
-
+    - flax >=0.12.0
 tests:
   - python:
       imports:
